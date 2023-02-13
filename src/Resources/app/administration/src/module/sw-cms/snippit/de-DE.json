@@ -1,0 +1,12 @@
+{
+  "sw-cms": {
+
+     "blocks": {
+       "commerce": {
+         "productFiveColumn": {
+           "label": "Fünf Spalten, Produkt-Boxen"
+         }
+     }
+   }
+ }
+}
