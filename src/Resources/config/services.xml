@@ -5,5 +5,13 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <!-- <service id="SoundDesign\DataResolver\DailyMotionCmsElementResolver">
+            <tag name="shopware.cms.data_resolver" />
+        </service> -->
+        <service id="SoundDesign\Storefront\Controller\SoundDesignController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
     </services>
 </container>

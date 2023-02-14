@@ -1,12 +1,19 @@
 {
  "sw-cms": {
 
-    "blocks": {
-      "commerce": {
-        "productFiveColumn": {
-          "label": "Five columns, product boxes"
-        }
-    }
-  }
-}
+     "blocks": {
+       "commerce": {
+         "productFiveColumn": {
+           "label": "Five columns, product boxes"
+         }
+     }
+    },
+    
+    "elements": {
+     "customDailymotionElement": {
+       "label": "Dailymotion video"
+     }
+   }
+   
+ }
 }

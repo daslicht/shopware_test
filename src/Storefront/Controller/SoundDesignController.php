@@ -1,48 +1,25 @@
-<?php
- 
-namespace SoundDesignPlugin\Storefront\Controller;
- 
-use Shopware\Core\Framework\Routing\Annotation\RouteScope;
-use Shopware\Core\System\SalesChannel\SalesChannelContext;
+<?php declare(strict_types=1);
+
+namespace SoundDesign\Storefront\Controller;
+
 use Shopware\Storefront\Controller\StorefrontController;
+use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Shopware\Storefront\Page\GenericPageLoader;
-use Shopware\Storefront\Page\Wishlist\WishlistPageLoader;
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
-use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
-use Shopware\Storefront\Page\Wishlist\GuestWishlistPageLoader;
+
 /**
- * @RouteScope(scopes={"storefront"})
+ * @Route(defaults={"_routeScope"={"storefront"}})
  */
 class SoundDesignController extends StorefrontController
 {
-    private WishlistPageLoader $wishlistPageLoader;
-    protected $genericPageLoader;
-    protected EntityRepositoryInterface $customerRepository;
-    private GuestWishlistPageLoader $guestPageLoader;
-
-
-    public function __construct(GenericPageLoader $genericPageLoader, 
-                                WishlistPageLoader $wishlistPageLoader,  
-                                GuestWishlistPageLoader $guestPageLoader, 
-                                EntityRepositoryInterface $customerRepository) 
+   /**
+    * @Route("/example", name="frontend.example.example", methods={"GET"}, defaults={"_routeScope"={"storefront"}})
+    */
+    public function showExample(): Response
     {
-         // $this->genericPageLoader = $genericPageLoader;
-         // $this->wishlistPageLoader = $wishlistPageLoader;
-         // $this->context = \Shopware\Core\Framework\Context::createDefaultContext();
-         // $this->guestPageLoader = $guestPageLoader;
-         // $this->customerRepository = $customerRepository;
-    }
-
-    // /**
-    //  * @Route("/wishlist/{wishlist_id}", name="frontend.SoundDesignplugin.skeleton", methods={"GET"})
-    //  */
-    // public function showPage(Request $request, SalesChannelContext $context ): Response
-    // {
-
-    // }
+        return $this->renderStorefront('@SoundDesign/storefront/page/example.html.twig', [
+            'example' => 'Hello world'
+        ]);
+    } 
 }

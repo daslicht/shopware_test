@@ -1,0 +1,10 @@
+{% block sw_cms_element_dailymotion_config %}
+    <sw-text-field
+          v-model="dailyUrl"
+          class="swag-dailymotion-field"
+          label="Dailymotion video link"
+          placeholder="Enter dailymotion link..."
+          @input="onElementUpdate"
+          @change="onElementUpdate">
+    </sw-text-field>
+{% endblock %}

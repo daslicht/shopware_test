@@ -15,6 +15,7 @@ Shopware.Service('cmsService').registerCmsBlock({
         sizingMode:   'boxed',
     },
     slots: {
-
+     left: 'text',
+     right: 'dailymotion'
     },
 });
